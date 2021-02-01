@@ -1,0 +1,189 @@
+﻿columns
+action
+agent_id
+agentname
+assigned_group
+assigned_group_change
+assigned_support_company
+assigned_support_company_change
+assignee
+assignee_change
+assignee_change_date
+audit_date
+audit_date_aest
+audit_date_local
+audit_date_utc
+create_date
+fields_changed
+form_name
+gns accepted/declined by agent id
+gns accepted/declined by agent name
+gns accepted/declined by site id
+gns accepted/declined by site name
+gns accepted/declined by team id
+gns accepted/declined by team name
+guid_field
+inc envt interaction sequence
+inc evnt accepted ts aest
+inc evnt accepted ts local
+inc evnt access seeker pending reason
+inc evnt assigned group
+inc evnt assigned group aest ts
+inc evnt assigned group change
+inc evnt assigned group local ts
+inc evnt assigned support company
+inc evnt assigned support company change
+inc evnt assignee
+inc evnt assignee change
+inc evnt assignee change date
+inc evnt end aest ts
+inc evnt end ts
+inc evnt end user engagement type change
+inc evnt incident status aest ts
+inc evnt incident status local ts
+inc evnt industry status change
+inc evnt industry sub status change
+inc evnt interaction milestone
+inc evnt interaction sequence type
+inc evnt kaizen l2 process
+inc evnt kaizen l2 process new
+inc evnt nbn reason code
+inc evnt next assigned group ts
+inc evnt next resolution rejection accept ts
+inc evnt next resolution rejection accept user
+inc evnt next resolution rejection accepted/declined by
+inc evnt next resolution rejection decline code
+inc evnt next resolution rejection decline comment
+inc evnt next resolution rejection decline reason
+inc evnt next resolution rejection decline ts local
+inc evnt next resolution rejection decline user
+inc evnt next status ts
+inc evnt number id
+inc evnt otd access seeker update ts aest
+inc evnt otd closed ts
+inc evnt otd closed ts aest
+inc evnt otd closed ts utc
+inc evnt otd dispatched ts
+inc evnt otd dispatched ts aest
+inc evnt otd milestone
+inc evnt otd pended ts
+inc evnt otd pended ts aest
+inc evnt otd resolution rejected ts aest
+inc evnt otd resolved ts
+inc evnt otd resolved ts aest
+inc evnt otd run max access seeker update ts aest
+inc evnt otd run max resolution rejected update ts aest
+inc evnt otd run max resolved ts aest
+inc evnt otd run max resolved ts local
+inc evnt previous assigned group
+inc evnt previous interaction milestone
+inc evnt previous interaction ts
+inc evnt previous interaction ts aest
+inc evnt primary key
+inc evnt reason change
+inc evnt rejected ts local
+inc evnt request id
+inc evnt resolution category change
+inc evnt resolution category tier 3
+inc evnt resolution category tier 3 change
+inc evnt resolution rejection accept reason
+inc evnt resolution rejection code
+inc evnt resolution rejection comment
+inc evnt resolution rejection decline code
+inc evnt resolution rejection decline comment
+inc evnt resolution rejection decline reason
+inc evnt resolution rejection reason
+inc evnt run max assigned group aest ts
+inc evnt run max assigned group local ts
+inc evnt run max status aest ts
+inc evnt run max status local ts
+inc evnt start ts
+inc evnt start ts aest
+inc evnt start ts utc
+inc evnt status
+inc evnt status change
+inc evnt status check seq
+inc evnt user x
+incident key
+incident_accepted_ts_aest
+incident_accepted_ts_local
+incident_access_seeker_update_ts_aest
+incident_assigned_group_ts_aest
+incident_assigned_group_ts_local
+incident_closed_ts_aest
+incident_closed_ts_local
+incident_closed_ts_utc
+incident_dispatched_ts_aest
+incident_dispatched_ts_local
+incident_industry_status_change
+incident_pended_ts_aest
+incident_pended_ts_local
+incident_reason_change
+incident_resolution_rejected_ts_aest
+incident_resolved_ts_aest
+incident_resolved_ts_local
+incident_status
+incident_status_change
+incident_status_ts_aest
+incident_status_ts_local
+industry_sub_status_change
+interaction_milestone
+interaction_sequence
+interaction_sequence_type
+kaizen_l2_process_new
+kaizen_l2_process_test
+last_modified_by
+log_entries
+log_key_1
+modified_date
+nbn_as_req_change
+nbn_enduser_engagement_type_change
+nbn_reason_code
+nbn_resrej_accept_reason_change
+nbn_resrej_code_change
+nbn_resrej_comment_change
+nbn_resrej_decline_code_change
+nbn_resrej_decline_reason_change
+nbn_resrej_reason_change
+nbn_resrejdecline_comment_change
+next_assigned_group_ts
+next_audit_date_aest_ts
+next_audit_date_local_ts
+next_nbn_resrej_decline_code_change
+next_nbn_resrej_decline_reason_change
+next_nbn_resrejdecline_comment_change
+next_rejection_accept_ts_local
+next_rejection_accept_user_x
+next_rejection_decline_ts_local
+next_rejection_decline_user_x
+next_resolution_rejection_accept_decline_by
+next_status_ts
+original_request_id
+otd_milestone
+prev_interaction_audit_date_aest
+prev_interaction_audit_date_local
+prev_interaction_milestone
+previous inc evnt status
+previous_assigned_group
+previous_incident_status
+request_id
+res_cat_3
+res_cat_3_change
+resolution_category_change
+resolution_rejected_date
+running_max_access_seeker_update_ts_aest
+running_max_assigned_group_ts_local
+running_max_assigned_groupd_ts_aest
+running_max_resolution_rejected_update_ts_aest
+running_max_resolved_ts_aest
+running_max_resolved_ts_local
+running_max_status_ts_aest
+running_max_status_ts_local
+short_description
+site_id
+sitename
+status
+submitter
+team_id
+teamname
+user_x
