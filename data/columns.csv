@@ -1,189 +1,189 @@
-﻿columns
-action
-agent_id
-agentname
-assigned_group
-assigned_group_change
-assigned_support_company
-assigned_support_company_change
-assignee
-assignee_change
-assignee_change_date
-audit_date
-audit_date_aest
-audit_date_local
-audit_date_utc
-create_date
-fields_changed
-form_name
-gns accepted/declined by agent id
-gns accepted/declined by agent name
-gns accepted/declined by site id
-gns accepted/declined by site name
-gns accepted/declined by team id
-gns accepted/declined by team name
-guid_field
-inc envt interaction sequence
-inc evnt accepted ts aest
-inc evnt accepted ts local
-inc evnt access seeker pending reason
-inc evnt assigned group
-inc evnt assigned group aest ts
-inc evnt assigned group change
-inc evnt assigned group local ts
-inc evnt assigned support company
-inc evnt assigned support company change
-inc evnt assignee
-inc evnt assignee change
-inc evnt assignee change date
-inc evnt end aest ts
-inc evnt end ts
-inc evnt end user engagement type change
-inc evnt incident status aest ts
-inc evnt incident status local ts
-inc evnt industry status change
-inc evnt industry sub status change
-inc evnt interaction milestone
-inc evnt interaction sequence type
-inc evnt kaizen l2 process
-inc evnt kaizen l2 process new
-inc evnt nbn reason code
-inc evnt next assigned group ts
-inc evnt next resolution rejection accept ts
-inc evnt next resolution rejection accept user
-inc evnt next resolution rejection accepted/declined by
-inc evnt next resolution rejection decline code
-inc evnt next resolution rejection decline comment
-inc evnt next resolution rejection decline reason
-inc evnt next resolution rejection decline ts local
-inc evnt next resolution rejection decline user
-inc evnt next status ts
-inc evnt number id
-inc evnt otd access seeker update ts aest
-inc evnt otd closed ts
-inc evnt otd closed ts aest
-inc evnt otd closed ts utc
-inc evnt otd dispatched ts
-inc evnt otd dispatched ts aest
-inc evnt otd milestone
-inc evnt otd pended ts
-inc evnt otd pended ts aest
-inc evnt otd resolution rejected ts aest
-inc evnt otd resolved ts
-inc evnt otd resolved ts aest
-inc evnt otd run max access seeker update ts aest
-inc evnt otd run max resolution rejected update ts aest
-inc evnt otd run max resolved ts aest
-inc evnt otd run max resolved ts local
-inc evnt previous assigned group
-inc evnt previous interaction milestone
-inc evnt previous interaction ts
-inc evnt previous interaction ts aest
-inc evnt primary key
-inc evnt reason change
-inc evnt rejected ts local
-inc evnt request id
-inc evnt resolution category change
-inc evnt resolution category tier 3
-inc evnt resolution category tier 3 change
-inc evnt resolution rejection accept reason
-inc evnt resolution rejection code
-inc evnt resolution rejection comment
-inc evnt resolution rejection decline code
-inc evnt resolution rejection decline comment
-inc evnt resolution rejection decline reason
-inc evnt resolution rejection reason
-inc evnt run max assigned group aest ts
-inc evnt run max assigned group local ts
-inc evnt run max status aest ts
-inc evnt run max status local ts
-inc evnt start ts
-inc evnt start ts aest
-inc evnt start ts utc
-inc evnt status
-inc evnt status change
-inc evnt status check seq
-inc evnt user x
-incident key
-incident_accepted_ts_aest
-incident_accepted_ts_local
-incident_access_seeker_update_ts_aest
-incident_assigned_group_ts_aest
-incident_assigned_group_ts_local
-incident_closed_ts_aest
-incident_closed_ts_local
-incident_closed_ts_utc
-incident_dispatched_ts_aest
-incident_dispatched_ts_local
-incident_industry_status_change
-incident_pended_ts_aest
-incident_pended_ts_local
-incident_reason_change
-incident_resolution_rejected_ts_aest
-incident_resolved_ts_aest
-incident_resolved_ts_local
-incident_status
-incident_status_change
-incident_status_ts_aest
-incident_status_ts_local
-industry_sub_status_change
-interaction_milestone
-interaction_sequence
-interaction_sequence_type
-kaizen_l2_process_new
-kaizen_l2_process_test
-last_modified_by
-log_entries
-log_key_1
-modified_date
-nbn_as_req_change
-nbn_enduser_engagement_type_change
-nbn_reason_code
-nbn_resrej_accept_reason_change
-nbn_resrej_code_change
-nbn_resrej_comment_change
-nbn_resrej_decline_code_change
-nbn_resrej_decline_reason_change
-nbn_resrej_reason_change
-nbn_resrejdecline_comment_change
-next_assigned_group_ts
-next_audit_date_aest_ts
-next_audit_date_local_ts
-next_nbn_resrej_decline_code_change
-next_nbn_resrej_decline_reason_change
-next_nbn_resrejdecline_comment_change
-next_rejection_accept_ts_local
-next_rejection_accept_user_x
-next_rejection_decline_ts_local
-next_rejection_decline_user_x
-next_resolution_rejection_accept_decline_by
-next_status_ts
-original_request_id
-otd_milestone
-prev_interaction_audit_date_aest
-prev_interaction_audit_date_local
-prev_interaction_milestone
-previous inc evnt status
-previous_assigned_group
-previous_incident_status
-request_id
-res_cat_3
-res_cat_3_change
-resolution_category_change
-resolution_rejected_date
-running_max_access_seeker_update_ts_aest
-running_max_assigned_group_ts_local
-running_max_assigned_groupd_ts_aest
-running_max_resolution_rejected_update_ts_aest
-running_max_resolved_ts_aest
-running_max_resolved_ts_local
-running_max_status_ts_aest
-running_max_status_ts_local
-short_description
-site_id
-sitename
-status
-submitter
-team_id
-teamname
-user_x
+﻿column,formula,viewname
+action,source table,t2110
+agent_id,agent_id,gns_vwfm_agentadherencetotal_v
+agentname,agentname,gns_vwfm_agentadherencetotal_v
+assigned_group,cast(case when assigned_group_position = 0 then null else regexp_substr(log_entries '[^\n]+' case when assigned_group_position = 0 then 1 else assigned_group_position end 1) end,csa_tmp_inc_evnt_rmdy2110_v3
+assigned_group_change,"trim(regexp_replace(assigned_group, 'assigned group:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+assigned_support_company,cast(case when assigned_support_company_position = 0 then null else regexp_substr(log_entries '[^\n]+' case when assigned_support_company_position = 0 then 1 else assigned_support_company_position end 1) end,csa_tmp_inc_evnt_rmdy2110_v3
+assigned_support_company_change,"trim(regexp_replace(assigned_support_company, 'assigned support company:|[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+assignee,cast(case when assignee_position = 0 then null else regexp_substr(log_entries '[^\n]+' case when assignee_position = 0 then 1 else assignee_position end 1) end,csa_tmp_inc_evnt_rmdy2110_v3
+assignee_change,"trim(regexp_replace(assignee, 'assignee:|[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+assignee_change_date,max(case when assignee_change <> '<blank>' or assignee_change is null then null else audit_date_local end) over ( partition by incident_key order by audit_date_local rows between unbounded preceding and current row ),csa_tmp_inc_evnt_rmdy2110_v5
+audit_date,source table,t2110
+audit_date_aest,convert_timezone ('utc' 'australia/sydney' audit_date),csa_tmp_inc_evnt_rmdy2110_v2
+audit_date_local,convert_timezone('utc' 'australia/' || timezone_city t1.audit_date),csa_tmp_inc_evnt_rmdy2110_v2
+audit_date_utc,audit_date,csa_tmp_inc_evnt_rmdy2110_v3
+create_date,source table,t2110
+fields_changed,source table,t2110
+form_name,source table,t2110
+gns accepted/declined by agent id,target table,csa_inc_evnt_rmdy2110_t
+gns accepted/declined by agent name,target table,csa_inc_evnt_rmdy2110_t
+gns accepted/declined by site id,target table,csa_inc_evnt_rmdy2110_t
+gns accepted/declined by site name,target table,csa_inc_evnt_rmdy2110_t
+gns accepted/declined by team id,target table,csa_inc_evnt_rmdy2110_t
+gns accepted/declined by team name,target table,csa_inc_evnt_rmdy2110_t
+guid_field,source table,t2110
+inc envt interaction sequence,target table,csa_inc_evnt_rmdy2110_t
+inc evnt accepted ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt accepted ts local,target table,csa_inc_evnt_rmdy2110_t
+inc evnt access seeker pending reason,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assigned group,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assigned group aest ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assigned group change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assigned group local ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assigned support company,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assigned support company change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assignee,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assignee change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt assignee change date,target table,csa_inc_evnt_rmdy2110_t
+inc evnt end aest ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt end ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt end user engagement type change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt incident status aest ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt incident status local ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt industry status change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt industry sub status change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt interaction milestone,target table,csa_inc_evnt_rmdy2110_t
+inc evnt interaction sequence type,target table,csa_inc_evnt_rmdy2110_t
+inc evnt kaizen l2 process,target table,csa_inc_evnt_rmdy2110_t
+inc evnt kaizen l2 process new,target table,csa_inc_evnt_rmdy2110_t
+inc evnt nbn reason code,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next assigned group ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection accept ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection accept user,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection accepted/declined by,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection decline code,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection decline comment,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection decline reason,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection decline ts local,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next resolution rejection decline user,target table,csa_inc_evnt_rmdy2110_t
+inc evnt next status ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt number id,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd access seeker update ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd closed ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd closed ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd closed ts utc,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd dispatched ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd dispatched ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd milestone,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd pended ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd pended ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd resolution rejected ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd resolved ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd resolved ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd run max access seeker update ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd run max resolution rejected update ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd run max resolved ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt otd run max resolved ts local,target table,csa_inc_evnt_rmdy2110_t
+inc evnt previous assigned group,target table,csa_inc_evnt_rmdy2110_t
+inc evnt previous interaction milestone,target table,csa_inc_evnt_rmdy2110_t
+inc evnt previous interaction ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt previous interaction ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt primary key,target table,csa_inc_evnt_rmdy2110_t
+inc evnt reason change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt rejected ts local,target table,csa_inc_evnt_rmdy2110_t
+inc evnt request id,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution category change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution category tier 3,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution category tier 3 change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection accept reason,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection code,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection comment,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection decline code,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection decline comment,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection decline reason,target table,csa_inc_evnt_rmdy2110_t
+inc evnt resolution rejection reason,target table,csa_inc_evnt_rmdy2110_t
+inc evnt run max assigned group aest ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt run max assigned group local ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt run max status aest ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt run max status local ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt start ts,target table,csa_inc_evnt_rmdy2110_t
+inc evnt start ts aest,target table,csa_inc_evnt_rmdy2110_t
+inc evnt start ts utc,target table,csa_inc_evnt_rmdy2110_t
+inc evnt status,target table,csa_inc_evnt_rmdy2110_t
+inc evnt status change,target table,csa_inc_evnt_rmdy2110_t
+inc evnt status check seq,target table,csa_inc_evnt_rmdy2110_t
+inc evnt user x,target table,csa_inc_evnt_rmdy2110_t
+incident key,target table,csa_inc_evnt_rmdy2110_t
+incident_accepted_ts_aest,case when incident_status = 'in progress' and incident_reason = 'accepted' then audit_date_aest else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_accepted_ts_local,case when incident_status = 'in progress' and incident_reason = 'accepted' then audit_date_local else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_access_seeker_update_ts_aest,case when otd_milestone = 'access seeker update' then audit_date_aest else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_assigned_group_ts_aest,"( case when nvl(assigned_group_change, '<blank>') <> '<blank>' then audit_date_aest else null end )",csa_tmp_inc_evnt_rmdy2110_v4
+incident_assigned_group_ts_local,"( case when nvl(assigned_group_change, '<blank>') <> '<blank>' then audit_date_local else null end )",csa_tmp_inc_evnt_rmdy2110_v4
+incident_closed_ts_aest,( case when incident_status_change = 'closed' then audit_date_aest else null end ),csa_tmp_inc_evnt_rmdy2110_v5
+incident_closed_ts_local,( case when incident_status_change = 'closed' then audit_date_local else null end ),csa_tmp_inc_evnt_rmdy2110_v5
+incident_closed_ts_utc,( case when incident_status_change = 'closed' then audit_date_utc else null end ),csa_tmp_inc_evnt_rmdy2110_v5
+incident_dispatched_ts_aest,case when incident_milestone_1 = 'dispatched' then audit_date_aest else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_dispatched_ts_local,case when incident_milestone_1 = 'dispatched' then audit_date_local else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_industry_status_change,"trim(regexp_replace(incident_industry_status, 'industry status:', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+incident_pended_ts_aest,case when incident_milestone_1 = 'pending' then audit_date_aest else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_pended_ts_local,case when incident_milestone_1 = 'pending' then audit_date_local else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_reason_change,"trim(regexp_replace(incident_reason, 'status_reason: |[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+incident_resolution_rejected_ts_aest,case when otd_milestone = 'resolution rejected' then audit_date_aest else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_resolved_ts_aest,case when otd_milestone = 'resolved' then audit_date_aest else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_resolved_ts_local,case when otd_milestone = 'resolved' then audit_date_local else null end,csa_tmp_inc_evnt_rmdy2110_v5
+incident_status,"nvl(incident_status_change, min(incident_status_change) over ( partition by incident_key ,incident_status_null_seq ))",csa_tmp_inc_evnt_rmdy2110_v5
+incident_status_change,"trim(regexp_replace(incident_status_1, 'status:|[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+incident_status_ts_aest,"( case when nvl(incident_status_change, '<blank>') <> '<blank>' then audit_date_aest else null end )",csa_tmp_inc_evnt_rmdy2110_v4
+incident_status_ts_local,"( case when nvl(incident_status_change, '<blank>') <> '<blank>' then audit_date_local else null end )",csa_tmp_inc_evnt_rmdy2110_v4
+industry_sub_status_change,"trim(regexp_replace(industry_sub_status, 'industry sub status:|[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+interaction_milestone,"case when incident_industry_status_change = 'acknowledged' then 'new' when incident_reason_change = 'resolution rejected by a.s' then 'resolution rejected' when incident_reason_change = 'support contact hold' or industry_sub_status_change = 'held' or incident_industry_status_change = 'held' or incident_reason_change = 'request' then 'on hold' --'support contact hold' when incident_reason_change = 'dispatched' then 'dispatched' when /*incident_industry_status_change industry_sub_status_change*/ incident_status_change = 'pending' then 'pending' when /*incident_status_change incident_industry_status_change*/ incident_status_change = 'resolved' then 'resolved' when incident_industry_status_change = 'inprogress' and assignee_change like 'shift handover%' then 'acknowledged' when ( assignee_change = '<blank>' or incident_status_change = 'assigned' ) and assigned_support_company_change = 'nbnco operations' and user_x in ( 'aomaster' ,'aomaster1' ,'fuseadmin' ) then 'inbound transfer' when assignee_change = '<blank>' and user_x in ('fuseadmin') then 'as return' when assignee_change like 'shift handover%' and user_x in ('fuseadmin') then 'as return' when assigned_group_change in ( 'nsoc' ,'fttp pa assurance tier 1' ,'hfc pa assurance tier 1' ,'csc-hfc' ,'fttx assurance tier1' ,'fttx pa assurance tier 1' ,'nhur - work rights' ,'fttp assurance jeopardy tier 1' ,'hfc assurance jeopardy tier 1' ,'fttx assurance jeopardy tier 1' ,'fttc assurae tier1' ,'fttp assurance tier 2' ,'fttx assurance tier 2' ,'hfc assurance tier 2' ) then 'inbound transfer' when assigned_group_change is not null or assigned_support_company_change in ('optus nap optus networks pvt. ltd.') then 'outbound transfer' else null end",csa_tmp_inc_evnt_rmdy2110_v5
+interaction_sequence,case when next_audit_date_local_ts = audit_date_local and interaction_milestone is null then null else --need to move this down dense_rank() over ( partition by incident_key order by prev_interaction_seq_audit_date_local nulls first ) - 1 end,csa_tmp_inc_evnt_rmdy2110_v6
+interaction_sequence_type,"case when interaction_milestone = prev_interaction_milestone and interaction_milestone in ( 'pending' ,'dispatched' ) then null when interaction_milestone = 'new' and interaction_sequence = 0 then 'incident created' when interaction_milestone is not null and interaction_milestone not in ( 'acknowledged' ,'in progress' ,'support contact hold' ) and interaction_sequence = 1 then 'first action' when interaction_milestone is not null and interaction_milestone not in ( 'acknowledged' ,'in progress' ,'support contact hold' ) and interaction_sequence > 1 then 'subsequent action' -----end else null end",csa_tmp_inc_evnt_rmdy2110_v6
+kaizen_l2_process_new,case when kaizen_l2_process_test like '%d&a%' then 'd&a' when kaizen_l2_process_test like '%rsp%' then 'rsp' when kaizen_l2_process_test like '%r&c%' then 'r&c' else kaizen_l2_process_test end,csa_tmp_inc_evnt_rmdy2110_v7
+kaizen_l2_process_test,"case when interaction_milestone = 'resolved' and upper(previous_assigned_group) like ('%ericsson%') then 'r&c' when interaction_milestone in ('inbound transfer') and user_x in ('fuseadmin') then 'rsp' when interaction_milestone = 'resolved' and prev_interaction_milestone = 'pending' then 'rsp' when interaction_milestone in ('inbound transfer') and user_x in ( 'aomaster' ,'aomaster1' ) then 'rsp' when interaction_milestone = 'resolved' and prev_interaction_milestone = 'pending' and res_cat_3 in ( 'as - no response received' ,'addressing issue' ,'no fault found - no truck roll required' ,'no fault found - working as designed' ,'rsp disconnected service' ,'as - response received' ,'as - created in error' ,'potential fault cleared' ,'nbnco - provisioning error - restoration' ,'nbnco - remote reconfigure' ,'nbnco - remote reset/reload/restart' ) then 'rsp' when interaction_milestone in ( 'as return' ,'resolution rejected' ) then 'rsp' when incident_interaction_first_dispatched_ts_local is null and interaction_milestone in ( 'as return' ,'resolution rejected' ) then 'rsp' when incident_interaction_first_dispatched_ts_local is not null and interaction_milestone in ( 'as return' ,'resolution rejected' ) then 'rsp' when interaction_milestone = 'outbound transfer' and user_x in ('ar_escalator') then 'non-csa 1' when nvl(previous_assigned_group, '') in ('') and assigned_group in ('generic resource automation') then 'non-csa 2aa' when interaction_sequence_type in ( 'first action' ,'subsequent action' ) and user_x in ( 'aomaster' ,'aomaster1' ,'ar_escalator' ,'fuseadmin' ,'svc_rem_prd_tndpass' ) then 'non-csa 3' when nbn_technology = 'fttp' and prev_interaction_milestone in ( 'dispatched' ,'outbound transfer' ) then 'r&c' when interaction_milestone = 'resolved' and prev_interaction_milestone = 'dispatched' then 'r&c 1' when interaction_milestone = 'pending' and prev_interaction_milestone = 'dispatched' then 'r&c 2' when interaction_milestone = 'pending' and upper(previous_assigned_group) not in ( 'nsoc' ,'fttp pa assurance tier 1' ,'hfc pa assurance tier 1' ,'csc-hfc ' ,'fttx pa assurance tier 1' ,'nhur - work rights' ,'fttx assurance tier1' ,'fttp assurance jeopardy tier 1' ,'hfc assurance jeopardy tier 1' ,'fttx assurance jeopardy tier 1' ) then 'non-csa 5' when interaction_milestone = 'pending' then 'dp&a' --- 'rule 1 – dp&a - 21/08/2017' --when interaction_milestone= 'inbound transfer' and upper(previous_assigned_group) like ('%ericsson%managed%') then 'rule added 15/8/2017 3 ericsson r&c' when interaction_milestone = 'outbound transfer' and upper(previous_assigned_group) in ( 'nsoc' ,'fttp pa assurance tier 1' ,'hfc pa assurance tier 1' ,'csc-hfc ' ,'fttx pa assurance tier 1' ,'nhur - work rights' ,'fttx assurance tier1' ,'fttp assurance jeopardy tier 1' ,'hfc assurance jeopardy tier 1' ,'fttx assurance jeopardy tier 1' ) then 'd&a' --when interaction_milestone in ( 'resolved' ) and prev_interaction_milestone in ('resolution rejected','pending') and upper(previous_assigned_group) like ('%ericsson%managed%') then 'rule ericsson-r&c' --when interaction_milestone in ('inbound transfer') then 'non-csa-2' when interaction_milestone = 'dispatched' then 'd&a' when interaction_milestone = 'outbound transfer' and prev_interaction_milestone in ( 'as return' ,'new' ,'outbound transfer' ,'pending' ,'resolution rejected' ) then 'd&a' when interaction_milestone = 'outbound transfer' /*and prev_interaction_milestone in ('in progress','inbound transfer')*/ then 'non-csa 3' when interaction_milestone = 'resolved' and prev_interaction_milestone = 'resolution rejected' then 'd&a' when interaction_milestone = 'resolved' and prev_interaction_milestone = 'automation queue' then 'r&c 3' when interaction_milestone = 'resolved' and prev_interaction_milestone = 'pending' and res_cat_3 in ( 'truck roll - cabling replaced' ,'truck roll - reconfigure' ,'truck roll - replaced' ,'truck roll - cabling re-terminated/ respliced' ,'as - end user unavailable' ,'truck roll - cabling refitted' ) then 'r&c 4' when incident_interaction_first_resolved_ts_local < incident_interaction_first_dispatched_ts_local and incident_interaction_first_resolved_ts_local is not null and incident_interaction_first_dispatched_ts_local is not null then 'd&a' when incident_interaction_first_dispatched_ts_local is null and interaction_milestone in ( 'inbound transfer' ,'new' ,/*'pending',*/ 'resolved' ) then 'd&a' --when incident_interaction_first_dispatched_ts_local is null and interaction_milestone in ('outbound transfer') then 'rule 4- non-csa' when incident_interaction_first_dispatched_ts_local is not null and interaction_milestone in ( 'in progress' ,'inbound transfer' ,'new' ) then 'd&a' ---when incident_interaction_first_dispatched_ts_local is not null and interaction_milestone in ('outbound transfer') then 'rule 5/6- non-csa' when incident_interaction_first_dispatched_ts_local is not null and interaction_milestone in ('resolved') then 'r&c' --when incident_interaction_first_dispatched_ts_local is not null and interaction_milestone in ('pending') and audit_date_local > incident_interaction_first_dispatched_ts_local then 'rule 5- r&c' --when incident_interaction_first_dispatched_ts_local is not null and interaction_milestone in ('pending') and audit_date_local <= incident_interaction_first_dispatched_ts_local then 'rule 6- d&a' when interaction_milestone in ('inbound transfer') then 'non-csa-4' else 'no l2 process' end as kaizen_l2_process_new",csa_tmp_inc_evnt_rmdy2110_v6
+last_modified_by,source table,t2110
+log_entries,source table,t2110
+log_key_1,source table,t2110
+modified_date,source table,t2110
+nbn_as_req_change,"trim(regexp_replace(nbn_as_req, 'nbn_as request description:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_enduser_engagement_type_change,"trim(regexp_replace(nbn_enduser_engagement_type, 'nbn_end user engagement type:|[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_reason_code,cast(case when nbn_reason_code_position = 0 then null else regexp_substr(log_entries '[^\n]+' case when nbn_reason_code_position = 0 then 1 else nbn_reason_code_position end 1) end,csa_tmp_inc_evnt_rmdy2110_v3
+nbn_resrej_accept_reason_change, case when nbn_resrej_accept_reason_ts_local <= next_rejection_decline_ts_local or next_rejection_decline_ts_local is null then nbn_resrej_accept_reason_change_init else null end,csa_tmp_inc_evnt_rmdy2110_v6
+nbn_resrej_code_change,"trim(regexp_replace(nbn_resrej_code, 'nbn_resolutionrejectioncode:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_resrej_comment_change,"trim(regexp_replace(nbn_resrej_comment, 'nbn_resolution rejection comment:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_resrej_decline_code_change,"trim(regexp_replace(nbn_resrej_decline_code, 'nbn_resolutionrejectiondeclinecode:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_resrej_decline_reason_change,"trim(regexp_replace(nbn_resrej_decline_reason, 'nbn_resolution rejection decline reason:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_resrej_reason_change,"trim(regexp_replace(nbn_resrej_reason, 'nbn_resolution rejection reason:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+nbn_resrejdecline_comment_change,"trim(regexp_replace(nbn_resrejdecline_comment, 'nbn_resolution rejection decline comment:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+next_assigned_group_ts,"case when assigned_group_change is not null then lead(incident_assigned_group_ts_local) over ( partition by incident_key ,assigned_group_yn order by audit_date_local ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+next_audit_date_aest_ts,"nvl(lead(audit_date_aest) over ( partition by incident_key order by audit_date_local,request_id asc ), case when incident_status = 'closed' then audit_date_local else null end )",csa_tmp_inc_evnt_rmdy2110_v6
+next_audit_date_local_ts,"case when incident_status_change = 'resolved' then lead(audit_date_aest ) over (partition by incident_key order by case when incident_reason_change = 'resolution rejected by a.s' or incident_status_change = 'resolved' then audit_date_aest else null end nulls first ) else max(incident_resolution_rejected_ts_aest) over (partition by incident_key order by audit_date_aest rows between unbounded preceding and current row) end as running_max_resolution_rejected_update_ts_aest ,nvl(lead(audit_date_local) over ( partition by incident_key order by audit_date_local,request_id asc ), case when incident_status = 'closed' then audit_date_local else null end )",csa_tmp_inc_evnt_rmdy2110_v6
+next_nbn_resrej_decline_code_change,"case when nvl(incident_status_change, 'null') = 'resolved' then lead(nbn_resrej_decline_code_change) over ( partition by incident_key ,case when nvl(incident_status_change, 'null') = 'resolved' then 'y' else 'n' end order by audit_date_local asc ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+next_nbn_resrej_decline_reason_change,"case when nvl(incident_status_change, 'null') = 'resolved' then lead(nbn_resrej_decline_reason_change) over ( partition by incident_key ,case when nvl(incident_status_change, 'null') = 'resolved' then 'y' else 'n' end order by audit_date_local asc ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+next_nbn_resrejdecline_comment_change,"case when nvl(incident_status_change, 'null') = 'resolved' then lead(nbn_resrejdecline_comment_change) over ( partition by incident_key ,case when nvl(incident_status_change, 'null') = 'resolved' then 'y' else 'n' end order by audit_date_local asc ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+next_rejection_accept_ts_local,",CASE WHEN nvl(INCIDENT_STATUS_CHANGE, 'null') = 'Resolved' AND next_status_tmp_local <> 'Resolved' THEN lead(audit_date_local) OVER ( PARTITION BY incident_key ,next_accept_10 ORDER BY audit_date_local ASC ) ELSE NULL END",csa_tmp_inc_evnt_rmdy2110_v7
+next_rejection_accept_user_x,"case when nvl(incident_status_change, 'null') = 'resolved' and next_status_tmp_local <> 'resolved' then lead(audit_date_local) over ( partition by incident_key ,next_accept_10 order by audit_date_local asc ) else null",csa_tmp_inc_evnt_rmdy2110_v7
+next_rejection_decline_ts_local,"case when nvl(incident_status_change, 'null') = 'resolved' then lead(audit_date_local) over ( partition by incident_key ,case when nvl(incident_status_change, 'null') = 'resolved' then 'y' else 'n' end order by audit_date_local asc ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+next_rejection_decline_user_x,"case when nvl(incident_status_change, 'null') = 'resolved' then lead(user_x) over ( partition by incident_key ,case when nvl(incident_status_change, 'null') = 'resolved' then 'y' else 'n' end order by audit_date_local asc ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+next_resolution_rejection_accept_decline_by,case when rejection_declined = 'n' then next_rejection_accept_user_x when rejection_declined = 'y' then next_rejection_decline_user_x end,csa_tmp_inc_evnt_rmdy2110_v7
+next_status_ts,"case when incident_status_change is not null then lead(audit_date_local) over ( partition by incident_key ,incident_status_change order by audit_date_local ,incident_status_change nulls last ) else null end",csa_tmp_inc_evnt_rmdy2110_v6
+original_request_id,source table,t2110
+otd_milestone,case when incident_milestone_1 = 'assigned' and previous_incident_milestone_1 = 'access seeker update' then 'access seeker update assigned' when incident_milestone_1 = 'assigned' and previous_incident_milestone_1 = 'resolution rejected' then 'resolution rejected assigned' else incident_milestone_1 end,csa_tmp_inc_evnt_rmdy2110_v5
+prev_interaction_audit_date_aest,"nvl(max(interaction_audit_date_aest) over ( partition by incident_key order by audit_date_aest rows between unbounded preceding and 1 preceding ), interaction_audit_date_aest)",csa_tmp_inc_evnt_rmdy2110_v6
+prev_interaction_audit_date_local,"nvl(max(interaction_audit_date_local) over ( partition by incident_key order by audit_date_local rows between unbounded preceding and 1 preceding ), interaction_audit_date_local)",csa_tmp_inc_evnt_rmdy2110_v6
+prev_interaction_milestone,"lag(INTERACTION_MILESTONE, 1) OVER ( PARTITION BY incident_key ,interaction_milestone_null_yn ORDER BY AUDIT_DATE_LOCAL ) ",csa_tmp_inc_evnt_rmdy2110_v5
+previous inc evnt status,target table,csa_inc_evnt_rmdy2110_t
+previous_assigned_group,"lag(assigned_group_change) over ( partition by incident_key ,assigned_group_yn order by audit_date_local asc )",csa_tmp_inc_evnt_rmdy2110_v5
+previous_incident_status,"lag(incident_status_change) over ( partition by incident_key ,incident_status_yn order by audit_date_local asc )",csa_tmp_inc_evnt_rmdy2110_v5
+request_id,source table,t2110
+res_cat_3,cast(case when res_cat_3_position = 0 then null else regexp_substr(log_entries '[^\n]+' case when res_cat_3_position = 0 then 1 else res_cat_3_position end 1) end,csa_tmp_inc_evnt_rmdy2110_v3
+res_cat_3_change,"trim(regexp_replace(res_cat_3, 'resolution category tier 3:|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+resolution_category_change,"trim(regexp_replace(resolution_category, '|resolution category:|[0-9]|[\(\)]', ''))",csa_tmp_inc_evnt_rmdy2110_v4
+resolution_rejected_date,"case when incident_status_change = 'resolved' then lead(case when (incident_reason_change = 'resolution rejected by a.s' and nvl(nbn_resrej_code_change,'<blank>') <> '<blank>') or (incident_status_change = 'resolved' and nvl(nbn_resrej_code_change,'<blank>') <> '<blank>') then audit_date_local else null end) over ( partition by incident_key order by case when incident_reason_change = 'resolution rejected by a.s' or incident_status_change = 'resolved' then audit_date_local else null end ) else null end",csa_tmp_inc_evnt_rmdy2110_v7
+running_max_access_seeker_update_ts_aest,max(incident_access_seeker_update_ts_aest) over (partition by incident_key order by audit_date_aest rows between unbounded preceding and current row ),csa_tmp_inc_evnt_rmdy2110_v6
+running_max_assigned_group_ts_local,"max(incident_assigned_group_ts_local) over ( partition by incident_key order by audit_date_aest , assigned_group_change nulls last rows between unbounded preceding and current row )",csa_tmp_inc_evnt_rmdy2110_v6
+running_max_assigned_groupd_ts_aest,"max(incident_assigned_group_ts_aest) over ( partition by incident_key order by audit_date_aest,assigned_group_change nulls last rows between unbounded preceding and current row )",csa_tmp_inc_evnt_rmdy2110_v6
+running_max_resolution_rejected_update_ts_aest,ase when incident_status_change = 'Resolved' then lead(AUDIT_DATE_aest ) over (partition by incident_key order by case when incident_reason_change = 'Resolution Rejected By A.S' or incident_status_change = 'Resolved' then AUDIT_DATE_aest else null end nulls first ) else MAX(Incident_Resolution_Rejected_ts_AEST) OVER (PARTITION BY Incident_key ORDER BY audit_date_aest rows between unbounded preceding and current row) end ,0
+running_max_resolved_ts_aest,max(incident_resolved_ts_aest) over ( partition by incident_key order by audit_date_aest rows between unbounded preceding and current row ),csa_tmp_inc_evnt_rmdy2110_v6
+running_max_resolved_ts_local,max(incident_resolved_ts_local) over ( partition by incident_key order by audit_date_aest rows between unbounded preceding and current row ),csa_tmp_inc_evnt_rmdy2110_v6
+running_max_status_ts_aest,"max(incident_status_ts_aest) over ( partition by incident_key order by audit_date_aest,incident_status_change desc nulls last rows between unbounded preceding and current row )",csa_tmp_inc_evnt_rmdy2110_v6
+running_max_status_ts_local,"max(incident_status_ts_local) over ( partition by incident_key order by audit_date_aest, incident_status_change desc nulls last rows between unbounded preceding and current row )",csa_tmp_inc_evnt_rmdy2110_v6
+short_description,source table,t2110
+site_id,site_id,gns_vwfm_agentadherencetotal_v
+sitename,sitename,gns_vwfm_agentadherencetotal_v
+status,source table,t2110
+submitter,source table,t2110
+team_id,team_id,gns_vwfm_agentadherencetotal_v
+teamname,teamname,gns_vwfm_agentadherencetotal_v
+user_x,c455,t2110
