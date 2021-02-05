@@ -1,0 +1,1 @@
+MATCH query=((c:COLUMN)-[:COL_TO_COL]-(c2:COLUMN)) return query
